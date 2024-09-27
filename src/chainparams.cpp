@@ -120,29 +120,29 @@ public:
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 0; // 000000000000000004c2b624ed5d7756c508d90fd0da2c7c679febfa6c4735f0
         consensus.BIP66Height = 0; // 00000000000000000379eaa19dce8c9b722d46ae6a57c2f1a988119488b50931
-        consensus.DF1AMKHeight = 356500; // Oct 12th, 2020.
-        consensus.DF2BayfrontHeight = 405000; // Nov 2nd, 2020.
-        consensus.DF3BayfrontMarinaHeight = 465150; // Nov 28th, 2020.
-        consensus.DF4BayfrontGardensHeight = 488300; // Dec 8th, 2020.
-        consensus.DF5ClarkeQuayHeight = 595738; // Jan 24th, 2021.
-        consensus.DF6DakotaHeight = 678000; // Mar 1st, 2021.
-        consensus.DF7DakotaCrescentHeight = 733000; // Mar 25th, 2021.
-        consensus.DF8EunosHeight = 894000; // Jun 3rd, 2021.
-        consensus.DF9EunosKampungHeight = 895743; // Jun 4th, 2021.
-        consensus.DF10EunosPayaHeight = 1072000; // Aug 5th, 2021.
-        consensus.DF11FortCanningHeight = 1367000; // Nov 15th, 2021.
-        consensus.DF12FortCanningMuseumHeight = 1430640; // Dec 7th, 2021.
-        consensus.DF13FortCanningParkHeight = 1503143; // Jan 2nd, 2022.
-        consensus.DF14FortCanningHillHeight = 1604999; // Feb 7th, 2022.
-        consensus.DF15FortCanningRoadHeight = 1786000; // April 11th, 2022.
-        consensus.DF16FortCanningCrunchHeight = 1936000; // June 2nd, 2022.
-        consensus.DF17FortCanningSpringHeight = 2033000; // July 6th, 2022.
-        consensus.DF18FortCanningGreatWorldHeight = 2212000; // Sep 7th, 2022.
-        consensus.DF19FortCanningEpilogueHeight = 2257500; // Sep 22nd, 2022.
-        consensus.DF20GrandCentralHeight = 2479000; // Dec 8th, 2022.
-        consensus.DF21GrandCentralEpilogueHeight = 2574000; // Jan 10th, 2023.
-        consensus.DF22MetachainHeight = 3462000; // Nov 15th, 2023.
-        consensus.DF23Height = 4006000; // May 23th, 2024. Tentative date, might change on stable release.
+        consensus.DF1AMKHeight = 1; // Oct 12th, 2020.
+        consensus.DF2BayfrontHeight = 1; // Nov 2nd, 2020.
+        consensus.DF3BayfrontMarinaHeight = 1; // Nov 28th, 2020.
+        consensus.DF4BayfrontGardensHeight = 1; // Dec 8th, 2020.
+        consensus.DF5ClarkeQuayHeight = 1; // Jan 24th, 2021.
+        consensus.DF6DakotaHeight = 1; // Mar 1st, 2021.
+        consensus.DF7DakotaCrescentHeight = 1; // Mar 25th, 2021.
+        consensus.DF8EunosHeight = 1; // Jun 3rd, 2021.
+        consensus.DF9EunosKampungHeight = 1; // Jun 4th, 2021.
+        consensus.DF10EunosPayaHeight = 1; // Aug 5th, 2021.
+        consensus.DF11FortCanningHeight = 1; // Nov 15th, 2021.
+        consensus.DF12FortCanningMuseumHeight = 1; // Dec 7th, 2021.
+        consensus.DF13FortCanningParkHeight = 1; // Jan 2nd, 2022.
+        consensus.DF14FortCanningHillHeight = 1; // Feb 7th, 2022.
+        consensus.DF15FortCanningRoadHeight = 1; // April 11th, 2022.
+        consensus.DF16FortCanningCrunchHeight = 1; // June 2nd, 2022.
+        consensus.DF17FortCanningSpringHeight = 1; // July 6th, 2022.
+        consensus.DF18FortCanningGreatWorldHeight = 1; // Sep 7th, 2022.
+        consensus.DF19FortCanningEpilogueHeight = 1; // Sep 22nd, 2022.
+        consensus.DF20GrandCentralHeight = 1; // Dec 8th, 2022.
+        consensus.DF21GrandCentralEpilogueHeight = 1; // Jan 10th, 2023.
+        consensus.DF22MetachainHeight = 1; // Nov 15th, 2023.
+        consensus.DF23Height = 1; // May 23th, 2024. Tentative date, might change on stable release.
         consensus.DF24Height = std::numeric_limits<int>::max();
 
         consensus.pos.diffLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -156,7 +156,7 @@ public:
         consensus.pos.fAllowMinDifficultyBlocks = false; // only for regtest
         consensus.pos.fNoRetargeting = false; // only for regtest
 
-        consensus.pos.allowMintingWithoutPeers = false; // don't mint if no peers connected
+        consensus.pos.allowMintingWithoutPeers = true; // don't mint if no peers connected
 
         consensus.CSVHeight = 1; // 000000000000000004a1b34462cb8aeebd5799177f7a29cf28f2d1961716b5b5
         consensus.SegwitHeight = 0; // 0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893
@@ -230,7 +230,7 @@ public:
         consensus.blockTokenRewards.emplace(CommunityAccountType::CommunityDevFunds, consensus.dist.community);
 
         // EVM chain id
-        consensus.evmChainId = 1130; // ETH main chain ID
+        consensus.evmChainId = 9536; // ETH main chain ID
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -259,18 +259,18 @@ public:
         bech32_hrp = "df";
 
         // (!) after prefixes set
-        consensus.foundationShareScript = GetScriptForDestination(DecodeDestination("dZcHjYhKtEM88TtZLjp314H2xZjkztXtRc", *this));
+        consensus.foundationShareScript = GetScriptForDestination(DecodeDestination("dbiZSr916sRV3Ly5iNTCZZEMtskR6Y9Dq2", *this));
         consensus.foundationShare = 10; // old style - just percents
         consensus.foundationShareDFIP1 = 199 * COIN / 10 / 200; // 19.9 DFI @ 200 per block (rate normalized to (COIN == 100%)
 
         consensus.foundationMembers.clear();
-        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("dJEbxbfufyPF14SC93yxiquECEfq4YSd9L", *this)));
-        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("8bL7jZe2Nk5EhqFA6yuf8HPre3M6eewkqj", *this)));
-        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("8UhqhhiwtUuEqCD7HsekUsgYRuz115eLiQ", *this)));
+        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("dY9mznd4Z5829p9h5RiiJBJNAVTpQpeQmF", *this)));
+        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("dNf3SQD2TSzTL4SdpKV1JEtR4bjw4dAhLk", *this)));
+        consensus.foundationMembers.insert(GetScriptForDestination(DecodeDestination("dNuN9F1pW1kynpg7Bn7m3uWJD33durgzfs", *this)));
 
         consensus.accountDestruction.clear();
-        consensus.accountDestruction.insert(GetScriptForDestination(DecodeDestination("dJEbxbfufyPF14SC93yxiquECEfq4YSd9L", *this)));
-        consensus.accountDestruction.insert(GetScriptForDestination(DecodeDestination("8UAhRuUFCyFUHEPD7qvtj8Zy2HxF5HH5nb", *this)));
+        consensus.accountDestruction.insert(GetScriptForDestination(DecodeDestination("dY9mznd4Z5829p9h5RiiJBJNAVTpQpeQmF", *this)));
+        consensus.accountDestruction.insert(GetScriptForDestination(DecodeDestination("dNuN9F1pW1kynpg7Bn7m3uWJD33durgzfs", *this)));
 
         consensus.smartContracts.clear();
         consensus.smartContracts[SMART_CONTRACT_DFIP_2201] = GetScriptForDestination(CTxDestination(WitnessV0KeyHash(std::vector<unsigned char>{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0})));
@@ -284,15 +284,15 @@ public:
         vMasternodes.push_back({"8KRsoeCRKHUFFmAGGJbRBAgraXiUPUVuXn", "8cHaEaqRsz7fgW1eAjeroB5Bau5NfJNbtk"});
 
         std::vector<CTxOut> initdist;
-        initdist.push_back(CTxOut(58800000 * COIN, GetScriptForDestination(DecodeDestination("8ZWWN1nX8drxJBSMG1VS9jH4ciBSvA9nxp", *this))));
-        initdist.push_back(CTxOut(44100000 * COIN, GetScriptForDestination(DecodeDestination("8aGPBahDX4oAXx9okpGRzHPS3Td1pZaLgU", *this))));
-        initdist.push_back(CTxOut(11760000 * COIN, GetScriptForDestination(DecodeDestination("8RGSkdaft9EmSXXp6b2UFojwttfJ5BY29r", *this))));
-        initdist.push_back(CTxOut(11760000 * COIN, GetScriptForDestination(DecodeDestination("8L7qGjjHRa3Agks6incPomWCfLSMPYipmU", *this))));
-        initdist.push_back(CTxOut(29400000 * COIN, GetScriptForDestination(DecodeDestination("dcZ3NXrpbNWvx1rhiGvXStM6EQtHLc44c9", *this))));
-        initdist.push_back(CTxOut(14700000 * COIN, GetScriptForDestination(DecodeDestination("dMty9CfknKEaXqJuSgYkvvyF6UB6ffrZXG", *this))));
-        initdist.push_back(CTxOut(64680000 * COIN, GetScriptForDestination(DecodeDestination("dZcY1ZNm5bkquz2J74smKqokuPoVpPvGWu", *this))));
-        initdist.push_back(CTxOut(235200000 * COIN, GetScriptForDestination(DecodeDestination("dP8dvN5pnwbsxFcfN9DyqPVZi1fVHicDd2", *this))));
-        initdist.push_back(CTxOut(117600000 * COIN, GetScriptForDestination(DecodeDestination("dMs1xeSGZbGnTJWqTwjR4mcjp2egpEXG6M", *this))));
+        initdist.push_back(CTxOut(58800000 * COIN, GetScriptForDestination(DecodeDestination("dayybVcJ9vrku1d6bs4ceb1zxpx6mQXxQZ", *this))));
+        initdist.push_back(CTxOut(44100000 * COIN, GetScriptForDestination(DecodeDestination("dHK1oKRyDVtufp8Fh9rBv67e8uU5CWtrez", *this))));
+        initdist.push_back(CTxOut(11760000 * COIN, GetScriptForDestination(DecodeDestination("dJCQi4WGvSn2SKe2arfaHoJbmfJMXJ39od", *this))));
+        initdist.push_back(CTxOut(11760000 * COIN, GetScriptForDestination(DecodeDestination("dPVcK3rH8s33SDPaixemJoPhoVcxmZdYKD", *this))));
+        initdist.push_back(CTxOut(29400000 * COIN, GetScriptForDestination(DecodeDestination("dYczQfB1hPm3cEzDbt6ABWEVqtydQotPQE", *this))));
+        initdist.push_back(CTxOut(14700000 * COIN, GetScriptForDestination(DecodeDestination("dGSH3DnyrGsrArKM4AthoKUcG3g52hPV4u", *this))));
+        initdist.push_back(CTxOut(64680000 * COIN, GetScriptForDestination(DecodeDestination("dSasJqdpMCPbVARvGcs2SXhMNu8FUiYzFG", *this))));
+        initdist.push_back(CTxOut(235200000 * COIN, GetScriptForDestination(DecodeDestination("dTStdbf4x2Nmquk4frYxqZyML7vEtFk6WY", *this))));
+        initdist.push_back(CTxOut(117600000 * COIN, GetScriptForDestination(DecodeDestination("dJRhvwPAmE5juznwi2vKMxFWrPYZJMopRZ", *this))));
         {
             CAmount sum_initdist{0};
             for (CTxOut const & out : initdist)
@@ -306,19 +306,21 @@ public:
         // Destination for unused emission
         consensus.unusedEmission = GetScriptForDestination(DecodeDestination("df1qlwvtdrh4a4zln3k56rqnx8chu8t0sqx36syaea", *this));
 
-        genesis = CreateGenesisBlock(1587883831, 0x1d00ffff, 1, initdist, CreateGenesisMasternodes()); // old=1231006505
+        genesis = CreateGenesisBlock(1727342034, 0x1d00ffff, 1, initdist, CreateGenesisMasternodes()); // old=1231006505
         consensus.hashGenesisBlock = genesis.GetHash();
+        // std::cout << "Genesis block found!\n";
+        // std::cout << "time: " << genesis.nTime << "\n";
+        // std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
+        // std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
 
-        assert(consensus.hashGenesisBlock == uint256S("0x279b1a87aedc7b9471d4ad4e5f12967ab6259926cd097ade188dfcf22ebfe72a"));
-        assert(genesis.hashMerkleRoot == uint256S("0x03d771953b10d3506b3c3d9511e104d715dd29279be4b072ffc5218bb18adacf"));
+        assert(consensus.hashGenesisBlock == uint256S("0x60f6724203d12f9ddf9e5b37fe584f2e185cf0c78d15f76ae3351ccf40b5cfa4"));
+        assert(genesis.hashMerkleRoot == uint256S("0x4463fca9d7f2d6e599cd0ecef93e6d1a199e65f79c99992e115843eaecd0c823"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("seed.defichain.io");
-        vSeeds.emplace_back("seed.mydeficha.in");
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -326,59 +328,7 @@ public:
         fRequireStandard = true;
         m_is_test_chain = false;
 
-        checkpointData = {
-            {
-                {     0, consensus.hashGenesisBlock},
-                { 50000, uint256S("a45e6bf6ae858a287eb39021ea23880b4115c94e882e2b7c0fcfc98c317922cd")},
-                {100000, uint256S("3acd556dbd5e6e75bf463a15eeeeb54b6eab4a1f28039bdc343cc8c851cce45c")},
-                {150000, uint256S("46b231d42e5b002852708d48dec119bbc2d550fb67908f1e9f35102c1b45b94d")},
-                {200000, uint256S("414076e74894aaed3e1b52d64937f23289d59fe80e287c328a1281398bf9cb31")},
-                {250000, uint256S("d50a44503fa55cd01a78b98dea125e63b65aac720c96cca696857722e8149d77")},
-                {300000, uint256S("351c82cb8f77fba73e24223a9dd50954630560602c3a38f4d1c03dfa5cf1fd10")},
-                {350000, uint256S("ebc8737cb2caa77397f446e9a5aff72a2ca9e8305a6a6f8eb4b6c22f389bef08")},
-                {400000, uint256S("97c1014a66c9f327e04a59b3e1b4f551122d0698b6b1a98ec99555fffb474e9d")},
-                {450000, uint256S("03701a440b02d61b875ba2503bb53f1f1360cf66b4f0cf472e660a6809534379")},
-                {500000, uint256S("6a5b285bc68362deb66148069f55f82c02974056e73f5cc96971f7661ecd5880")},
-                {550000, uint256S("3f9aab70727d3cc76a3d406f520a71ccc6095aeea2d185e489f563320d429d5b")},
-                {600000, uint256S("79ddf4537e40cb59335a0551e5edc7bd396e6949aa2864c3200ca66f9c455405")},
-                {650000, uint256S("f18d64dd75c53590e833d3068132a65644963d5c5aebb4c73d42cbde8dc28d68")},
-                {700000, uint256S("0d0f779d7f43cc3fd9f01e71e136f7e9319d73791f8839720ab495327075e272")},
-                {750000, uint256S("d65c1f983b015ad665b2db9a206e2a7a0e8c51789918ea5bfda2f8121adc6f0f")},
-                {800000, uint256S("8d9ade23a54f16a0a5a6ce5d14788f93bfd7e703be8a3a07a85c935b47511f95")},
-                {850000, uint256S("2d7d58ae18a74f73b9836a8fffd3f65ce409536e654a6c644ce735215238a004")},
-                {900000, uint256S("02818c71fe7d8bcba7c778a73832a7e7b6603a8537bf61915ace497d2b0dec40")},
-                {1000000, uint256S("253d7137cfcda8d63e5f352ce1162c51a263dba6f9cad7a52f93308c91f04301")},
-                {1100000, uint256S("96d30c51e1617a12454a9ffa68a0e5746377063bdf09d1bf80bc5053ef8a392b")},
-                {1200000, uint256S("0859876a88c08242c77a1deea7d01757e3c6c1b3155e73bff60e28c8f6e65911")},
-                {1300000, uint256S("be6dc303c212243899478b8908c1f7c54217bb735655cdef8d85ae2c3c548229")},
-                {1400000, uint256S("a222eb0930af41d1d5a6f367a9532ee319630fd72d72055fde5da6b57feabbc1")},
-                {1500000, uint256S("c35a8a2fa6d076208dbb47e37b46b9da2da778bc06e2f224d5d5f370b8d71485")},
-                {1600000,uint256S("213c49a84a8c01b412e13169ac0c1e070b828a73fa50b02e7ac18520155cb98a")},
-                {1700000,uint256S("724af81603f524a0b54dea8348d8275e329b80e028982a706608099d68d01c9d")},
-                {1800000,uint256S("324cafa596501d4dda404727fc466eb493e072b669e00b007508fc1f69443991")},
-                {1900000,uint256S("65843174fc86bf26d65d3e10290c3e5f64fc946617ed0c9a391ecb17f55ecad5")},
-                {2000000,uint256S("85b935cbac0cfc668033788a6103fd8f72894d34770a95ff72230d69bfa0aea1")},
-                {2100000,uint256S("87a29a768d79f40ea79dda558033fb97049f6984d2d60dba481f01944303cd45")},
-                {2200000,uint256S("349416f5fcfb72e740fca63e56dec9ba05b5cc7e836859e7bcbb5be6dfb13588")},
-                {2300000,uint256S("19d753f1834a282c72daaa2a98841ae84f7f7a97ae78b355b1dd550a813a13fd")},
-                {2400000,uint256S("7ffa9f56e9a14002a4fbe8c7f6e0b1a5ce0f75def6124f5907ee2a6c328c9619")},
-                {2500000,uint256S("cf1df1124af59b9928fac48947883206dd33d165022086bee9d5001d047395da")},
-                {2600000,uint256S("af065074bb15c3583abcd3e7c22035a026cfd8d3fbc72d890fcd8b435cd8b7b4")},
-                {2700000,uint256S("3cf74bcaea19d457c7d8e7896177035e3e446f41ee2ac72dbfb25ac2072f49c5")},
-                {2800000,uint256S("e4a4b8961e5bc591892937f95a45b41ea35b653a4f98309973b86c95a3b38036")},
-                {2900000,uint256S("58b47020bbf8db5c7b4c5a9aa187288b0de404c794d33917bcba7d311680edc6")},
-                {3000000,uint256S("3fdfc99b955b6e994425d9702d529fd7a2db89805bc40f1e8d083f691ede20d7")},
-                {3100000,uint256S("5f77e698c51b65e606518c644b9b218005962877b3476cbe5f40fe5dc7b93663")},
-                {3200000,uint256S("574cea827d87c657396cb5142066e9e8ca83ab153e5350bf9c18328c0d456910")},
-                {3300000,uint256S("399a3617dbcf8cfe6bc4ef6cac961d617120a42db95180961db549b867ded8e7")},
-                {3400000,uint256S("83b2c5860f25cf411b722e5d127c0855dc7a514a1eed28279aab2a77f1ba0028")},
-                {3500000,uint256S("bf4c732e9a55d13f9a5d4b3c3a224232079251ea983c6c6c2a5fa5d5e91f12e9")},
-                {3600000,uint256S("cd7fb7dd41b2f77a6895133d15b81a4294663963512d756c75e6974e09a1e335")},
-                {3700000,uint256S("e579ea61173bce909b2bf13f2ede98c1025cef51350209953f235209a73bad01")},
-                {3800000,uint256S("8930b8a43a6413dc8739bec47123b0bb556f6ce2dac3583acefa533b966cb719")},
-
-            }
-        };
+        checkpointData = { };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 04aed18435a87754fcccb32734a02cf9ee162292489a476334326e8cf8a1079f
