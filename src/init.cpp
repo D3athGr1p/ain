@@ -696,8 +696,8 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/DeFiCh/ain>";
-    const std::string URL_WEBSITE = "<https://defichain.com>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/D3athGr1p/ain>";
+    const std::string URL_WEBSITE = "<https://D3athGr1p.com>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i").translated, 2009, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
